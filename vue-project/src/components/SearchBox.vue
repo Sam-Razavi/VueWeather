@@ -2,7 +2,7 @@
     <div
         id="app"
         :class="
-            typeof weather.main != 'undefined' && weather.main.temp > 18
+            typeof weather.main != 'undefined' && weather.main.temp > 10
                 ? 'warm'
                 : ''
         "
