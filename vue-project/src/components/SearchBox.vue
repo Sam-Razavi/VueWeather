@@ -46,6 +46,12 @@
 <script>
     export default {
         name: 'App',
+        props: {
+            apiKey: {
+                type: String,
+                required: true
+            }
+        },
         data() {
             return {
                 api_key: '49a0e74c2597974cdbc787bc28c7c4e7',
@@ -105,7 +111,7 @@
         background: linear-gradient(
             to bottom,
             rgba(0, 0, 0, 0.15),
-            rgba(0, 0, 0, 0.7)
+            rgba(0, 0, 0, 0.2)
         );
     }
     .search-box {
@@ -147,12 +153,9 @@
         color: #fff;
         text-align: center;
     }
-
-    /* Style the weather information */
     .weather-field {
         text-align: center;
     }
-
     .weather-field .temp {
         display: inline-block;
         padding: 10px 25px;

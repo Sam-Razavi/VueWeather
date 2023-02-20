@@ -34,11 +34,17 @@
                 <div class="offcanvas-body">
                     <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                         <li class="nav-item">
-                             <RouterLink class="nav-link active"
-                                aria-current="page" to="/">Home</RouterLink>
+                            <RouterLink
+                                class="nav-link active"
+                                aria-current="page"
+                                to="/"
+                                >Home</RouterLink
+                            >
                         </li>
                         <li class="nav-item">
-                        <RouterLink class="nav-link" to="/about">About + Convertor</RouterLink>
+                            <RouterLink class="nav-link" to="/about"
+                                >About + Convertor</RouterLink
+                            >
                         </li>
                     </ul>
                 </div>
@@ -47,6 +53,4 @@
     </nav>
     <RouterView />
 </template>
-<style scoped>
-
-</style>
+<style scoped></style>
