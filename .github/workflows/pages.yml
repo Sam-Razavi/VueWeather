@@ -3,17 +3,23 @@ name: Deploy Vue Project to GitHub Pages
 on:
   push:
     branches:
-      - main
+      - main  # Trigger deployment on pushes to the main branch
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout Code
-        uses: actions/checkout@v4  # Use latest version of the action
+        uses: actions/checkout@v4  # Ensure you use the correct version
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'  # Use Node.js version 20 to avoid warnings
 
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v4  # Use the updated action version
+        uses: peaceiris/actions-gh-pages@v4  # Ensure the latest version is used
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./vue-project  # Path to the folder containing index.html
