@@ -18,8 +18,14 @@ jobs:
         with:
           node-version: '20'  # Use Node.js version 20 to avoid warnings
 
+      - name: Install Dependencies
+        run: npm install  # Install project dependencies
+
+      - name: Build Project
+        run: npm run build  # Build the project to generate the 'dist' folder
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4  # Ensure the latest version is used
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./vue-project  # Path to the folder containing index.html
+          publish_dir: ./dist  # Path to the folder containing the built project
